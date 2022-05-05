@@ -1,0 +1,6 @@
+name,group_id,teacher_id,taught_in_laboratory
+Math,1,1,false
+Math,2,1,false
+Math,3,2,false
+Coding,1,2,true
+Coding,3,1,true
