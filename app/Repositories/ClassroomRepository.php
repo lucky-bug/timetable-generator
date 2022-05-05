@@ -23,7 +23,7 @@ class ClassroomRepository
         return $this->classrooms[$id];
     }
 
-    public function add(Classroom $classroom): void
+    public function store(Classroom $classroom): void
     {
         $this->lastId++;
         $classroom->setId($this->lastId);

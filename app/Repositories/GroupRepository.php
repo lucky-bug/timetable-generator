@@ -23,7 +23,7 @@ class GroupRepository
         return $this->groups[$id];
     }
 
-    public function add(Group $group): void
+    public function store(Group $group): void
     {
         $this->lastId++;
         $group->setId($this->lastId);
