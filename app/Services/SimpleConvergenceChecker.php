@@ -2,10 +2,10 @@
 
 namespace App\Services;
 
-use Core\IterationBreakerInterface;
+use Core\ConvergenceCheckerInterface;
 use Core\Population;
 
-class SimpleIterationBreaker implements IterationBreakerInterface
+class SimpleConvergenceChecker implements ConvergenceCheckerInterface
 {
     public function check(Population $population): bool
     {

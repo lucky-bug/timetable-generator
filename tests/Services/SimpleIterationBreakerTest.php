@@ -2,17 +2,17 @@
 
 namespace Tests\Services;
 
-use App\Services\SimpleIterationBreaker;
+use App\Services\SimpleConvergenceChecker;
 use Core\Population;
 use PHPUnit\Framework\TestCase;
 
 class SimpleIterationBreakerTest extends TestCase
 {
-    private SimpleIterationBreaker $iterationBreaker;
+    private SimpleConvergenceChecker $iterationBreaker;
 
     protected function setUp(): void
     {
-        $this->iterationBreaker = new SimpleIterationBreaker();
+        $this->iterationBreaker = new SimpleConvergenceChecker();
     }
 
     public function testCheck()

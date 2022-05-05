@@ -2,7 +2,7 @@
 
 namespace Core;
 
-interface IterationBreakerInterface
+interface ConvergenceCheckerInterface
 {
     public function check(Population $population): bool;
 }
