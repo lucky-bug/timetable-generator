@@ -7,6 +7,7 @@ class Classroom
     private int $id;
     private string $building;
     private string $number;
+    private int $capacity;
     private bool $laboratory;
 
     public function __construct()
@@ -42,6 +43,16 @@ class Classroom
     public function setNumber(string $number): void
     {
         $this->number = $number;
+    }
+
+    public function getCapacity(): int
+    {
+        return $this->capacity;
+    }
+
+    public function setCapacity(int $capacity): void
+    {
+        $this->capacity = $capacity;
     }
 
     public function isLaboratory(): bool

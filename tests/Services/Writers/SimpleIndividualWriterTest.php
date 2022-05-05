@@ -2,18 +2,18 @@
 
 namespace Tests\Services\Writers;
 
-use App\Services\Writers\SimpleIndividualWriter;
+use App\Services\Writers\SimpleWriter;
 use PHPUnit\Framework\TestCase;
 
 class SimpleIndividualWriterTest extends TestCase
 {
     private string $filename;
-    private SimpleIndividualWriter $individualWriter;
+    private SimpleWriter $individualWriter;
 
     protected function setUp(): void
     {
         $this->filename = tempnam(sys_get_temp_dir(), 'phpunit_');
-        $this->individualWriter = new SimpleIndividualWriter($this->filename);
+        $this->individualWriter = new SimpleWriter($this->filename);
     }
 
     public function provideTestWrite(): array

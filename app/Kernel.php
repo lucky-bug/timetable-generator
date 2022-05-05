@@ -2,7 +2,7 @@
 
 namespace App;
 
-use Core\IndividualWriterInterface;
+use App\Services\Writers\WriterInterface;
 use Core\IterationBreakerInterface;
 use Core\Population;
 use Core\ReproductionAlgorithmInterface;
@@ -13,23 +13,23 @@ class Kernel
     private SelectionAlgorithmInterface $selectionAlgorithm;
     private ReproductionAlgorithmInterface $reproductionAlgorithm;
     private IterationBreakerInterface $iterationBreaker;
-    private IndividualWriterInterface $individualWriter;
+    private WriterInterface $writer;
 
     public function __construct(
         SelectionAlgorithmInterface $selectionAlgorithm,
         ReproductionAlgorithmInterface $reproductionAlgorithm,
         IterationBreakerInterface $iterationBreaker,
-        IndividualWriterInterface $individualWriter
+        WriterInterface $writer
     ) {
         $this->selectionAlgorithm = $selectionAlgorithm;
         $this->reproductionAlgorithm = $reproductionAlgorithm;
         $this->iterationBreaker = $iterationBreaker;
-        $this->individualWriter = $individualWriter;
+        $this->writer = $writer;
     }
 
     public function handle(Population $initialPopulation): void
     {
-        $this->individualWriter->write($this->iterate($initialPopulation)->getFirst());
+        $this->writer->write($this->iterate($initialPopulation)->getFirst());
     }
 
     private function iterate(Population $population): Population
