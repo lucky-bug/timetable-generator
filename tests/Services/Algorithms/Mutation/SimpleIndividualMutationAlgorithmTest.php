@@ -1,8 +1,8 @@
 <?php
 
-namespace Tests;
+namespace Tests\Services\Algorithms\Mutation;
 
-use App\SimpleIndividualMutationAlgorithm;
+use App\Services\Algorithms\Mutation\SimpleIndividualMutationAlgorithm;
 use PHPUnit\Framework\TestCase;
 
 class SimpleIndividualMutationAlgorithmTest extends TestCase

@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Services\Writers;
 
 use Core\IndividualWriterInterface;
 

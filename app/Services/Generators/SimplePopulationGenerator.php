@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Services\Generators;
 
 use Core\Population;
 use Core\PopulationGeneratorInterface;

@@ -1,8 +1,8 @@
 <?php
 
-namespace Tests;
+namespace Tests\Services\Generators;
 
-use App\SimplePopulationGenerator;
+use App\Services\Generators\SimplePopulationGenerator;
 use Core\Population;
 use PHPUnit\Framework\TestCase;
 

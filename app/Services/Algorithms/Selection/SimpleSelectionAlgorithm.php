@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Services\Algorithms\Selection;
 
 use Core\Population;
 use Core\SelectionAlgorithmInterface;

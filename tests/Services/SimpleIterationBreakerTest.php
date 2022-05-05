@@ -1,8 +1,8 @@
 <?php
 
-namespace Tests;
+namespace Tests\Services;
 
-use App\SimpleIterationBreaker;
+use App\Services\SimpleIterationBreaker;
 use Core\Population;
 use PHPUnit\Framework\TestCase;
 

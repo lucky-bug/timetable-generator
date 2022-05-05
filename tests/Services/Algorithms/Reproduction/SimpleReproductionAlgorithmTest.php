@@ -1,8 +1,8 @@
 <?php
 
-namespace Tests;
+namespace Tests\Services\Algorithms\Reproduction;
 
-use App\SimpleReproductionAlgorithm;
+use App\Services\Algorithms\Reproduction\SimpleReproductionAlgorithm;
 use Core\Population;
 use PHPUnit\Framework\TestCase;
 

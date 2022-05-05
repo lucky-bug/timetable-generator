@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Services\Algorithms\Reproduction;
 
 use Core\Population;
 use Core\ReproductionAlgorithmInterface;

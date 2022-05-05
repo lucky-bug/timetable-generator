@@ -1,8 +1,8 @@
 <?php
 
-namespace Tests;
+namespace Tests\Services\Writers;
 
-use App\SimpleIndividualWriter;
+use App\Services\Writers\SimpleIndividualWriter;
 use PHPUnit\Framework\TestCase;
 
 class SimpleIndividualWriterTest extends TestCase

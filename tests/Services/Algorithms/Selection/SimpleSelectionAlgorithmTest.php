@@ -1,8 +1,8 @@
 <?php
 
-namespace Tests;
+namespace Tests\Services\Algorithms\Selection;
 
-use App\SimpleSelectionAlgorithm;
+use App\Services\Algorithms\Selection\SimpleSelectionAlgorithm;
 use Core\Population;
 use PHPUnit\Framework\TestCase;
 
