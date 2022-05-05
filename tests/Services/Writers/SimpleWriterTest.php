@@ -5,15 +5,15 @@ namespace Tests\Services\Writers;
 use App\Services\Writers\SimpleWriter;
 use PHPUnit\Framework\TestCase;
 
-class SimpleIndividualWriterTest extends TestCase
+class SimpleWriterTest extends TestCase
 {
     private string $filename;
-    private SimpleWriter $individualWriter;
+    private SimpleWriter $writer;
 
     protected function setUp(): void
     {
         $this->filename = tempnam(sys_get_temp_dir(), 'phpunit_');
-        $this->individualWriter = new SimpleWriter($this->filename);
+        $this->writer = new SimpleWriter($this->filename);
     }
 
     public function provideTestWrite(): array
@@ -29,11 +29,11 @@ class SimpleIndividualWriterTest extends TestCase
     /**
      * @dataProvider provideTestWrite
      */
-    public function testWrite(string $individual): void
+    public function testWrite(string $text): void
     {
-        $this->individualWriter->write($individual);
+        $this->writer->write($text);
 
-        self::assertEquals(sprintf("%s\n", $individual), file_get_contents($this->filename));
+        self::assertEquals(sprintf("%s\n", $text), file_get_contents($this->filename));
     }
 
     protected function tearDown(): void
