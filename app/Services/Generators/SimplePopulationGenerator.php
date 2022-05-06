@@ -7,10 +7,13 @@ use Core\PopulationGeneratorInterface;
 
 class SimplePopulationGenerator implements PopulationGeneratorInterface
 {
-    public function generate(): Population
+    public function generate(int $size): Population
     {
         $population = new Population();
-        $population->add('0000');
+
+        for ($i = 0; $i < $size; $i++) {
+            $population->add('0000');
+        }
 
         return $population;
     }

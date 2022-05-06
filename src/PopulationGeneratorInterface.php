@@ -4,5 +4,5 @@ namespace Core;
 
 interface PopulationGeneratorInterface
 {
-    public function generate(): Population;
+    public function generate(int $size): Population;
 }

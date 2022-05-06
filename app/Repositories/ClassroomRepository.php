@@ -23,6 +23,11 @@ class ClassroomRepository
         return $this->classrooms[$id];
     }
 
+    public function getCount(): int
+    {
+        return count($this->classrooms);
+    }
+
     public function store(Classroom $classroom): void
     {
         $this->lastId++;

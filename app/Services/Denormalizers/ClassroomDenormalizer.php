@@ -4,7 +4,7 @@ namespace App\Services\Denormalizers;
 
 use App\Entities\Classroom;
 
-class ClassroomDenormalizer implements DenormalizerInterface
+class ClassroomDenormalizer
 {
     const KEY_BUILDING = 'building';
     const KEY_NUMBER = 'number';

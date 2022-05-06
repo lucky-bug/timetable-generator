@@ -46,6 +46,7 @@ class Population
     public function add(string $individual): self
     {
         $this->individuals[] = $individual;
+        $this->size++;
 
         return $this;
     }
@@ -53,15 +54,5 @@ class Population
     public function getSize(): int
     {
         return $this->size;
-    }
-
-    /**
-     * @return $this
-     */
-    public function setSize(int $size): self
-    {
-        $this->size = $size;
-
-        return $this;
     }
 }

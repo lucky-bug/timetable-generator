@@ -8,6 +8,8 @@ use PHPUnit\Framework\TestCase;
 
 class SimplePopulationGeneratorTest extends TestCase
 {
+    private const EXAMPLE_POPULATION_SIZE = 10;
+
     private SimplePopulationGenerator $populationGenerator;
 
     protected function setUp(): void
@@ -17,9 +19,9 @@ class SimplePopulationGeneratorTest extends TestCase
 
     public function testGenerate()
     {
-        $population = new Population();
-        $population->add('0000');
+        $population = $this->populationGenerator->generate(self::EXAMPLE_POPULATION_SIZE);
 
-        self::assertEquals($population, $this->populationGenerator->generate());
+        self::assertEquals(self::EXAMPLE_POPULATION_SIZE, $population->getSize());
+        self::assertCount(self::EXAMPLE_POPULATION_SIZE, $population->getAll());
     }
 }

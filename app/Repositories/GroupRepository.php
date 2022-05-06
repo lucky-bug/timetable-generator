@@ -23,6 +23,11 @@ class GroupRepository
         return $this->groups[$id];
     }
 
+    public function getCount(): int
+    {
+        return count($this->groups);
+    }
+
     public function store(Group $group): void
     {
         $this->lastId++;

@@ -4,7 +4,7 @@ namespace App\Services\Denormalizers;
 
 use App\Entities\Group;
 
-class GroupDenormalizer implements DenormalizerInterface
+class GroupDenormalizer
 {
     const KEY_NAME = 'name';
     const KEY_SIZE = 'size';

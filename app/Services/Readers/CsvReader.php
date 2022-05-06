@@ -6,9 +6,9 @@ class CsvReader implements ReaderInterface
 {
     private bool $firstLineHeader;
 
-    public function __construct()
+    public function __construct(bool $firstLineHeader = false)
     {
-        $this->firstLineHeader = false;
+        $this->firstLineHeader = $firstLineHeader;
     }
 
     public function read(string $source): array

@@ -4,7 +4,7 @@ namespace App\Services\Denormalizers;
 
 use App\Entities\Lesson;
 
-class LessonDenormalizer implements DenormalizerInterface
+class LessonDenormalizer
 {
     const KEY_NAME = 'name';
     const KEY_GROUP_ID = 'group_id';
