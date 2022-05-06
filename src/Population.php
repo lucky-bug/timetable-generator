@@ -36,6 +36,7 @@ class Population
     public function setAll(array $individuals): self
     {
         $this->individuals = $individuals;
+        $this->size = count($individuals);
 
         return $this;
     }

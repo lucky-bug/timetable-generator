@@ -29,7 +29,12 @@ class Kernel
 
     public function handle(Population $initialPopulation): void
     {
-        $this->writer->write($this->iterate($initialPopulation)->getFirst());
+        $this->writer->write(
+            json_encode(
+                $this->iterate($initialPopulation)->getAll(),
+                JSON_PRETTY_PRINT
+            )
+        );
     }
 
     private function iterate(Population $population): Population

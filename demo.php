@@ -1,9 +1,13 @@
 <?php
 
-$app = require __DIR__ . '/bootstrap/app.php';
+require __DIR__ . '/vendor/autoload.php';
 
+use App\Kernel;
 use App\Services\Generators\SimplePopulationGenerator;
+
+/** @var Kernel $kernel */
+$kernel = require __DIR__ . '/bootstrap/kernel.php';
 
 $initialPopulationGenerator = new SimplePopulationGenerator();
 
-$app->handle($initialPopulationGenerator->generate());
+$kernel->handle($initialPopulationGenerator->generate(10));
