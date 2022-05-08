@@ -98,6 +98,9 @@ $kernel = new Kernel(
     new SimpleWriter('php://stdout')
 );
 
+$customIndividuals = [
+    '00100000000000001010000001000000010101101001101110000000001100000111111111110001',
+];
 $initialPopulationGenerator = new SimplePopulationGenerator(
     new SimpleRandomNumberGenerator(),
     $lessonRepository,
@@ -105,6 +108,12 @@ $initialPopulationGenerator = new SimplePopulationGenerator(
     $genesPerLesson
 );
 
-$kernel->handle($initialPopulationGenerator->generate($populationSize));
+$initialPopulation = $initialPopulationGenerator->generate($populationSize);
+
+foreach ($customIndividuals as $customIndividual) {
+    $initialPopulation->add($customIndividual);
+}
+
+$kernel->handle($initialPopulation);
 
 return $kernel;
