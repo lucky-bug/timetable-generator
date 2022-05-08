@@ -39,10 +39,6 @@ class SimpleReproductionAlgorithm implements ReproductionAlgorithmInterface
             $secondParent = $population->get($secondParentIndex);
             $crossoverPoint = $this->randomNumberGenerator->generateInt(1, strlen($firstParent) - 1);
 
-            if (strlen($firstParent) !== strlen($secondParent)) {
-                die('Found something!');
-            }
-
             $population->add(
                 $this->individualMutationAlgorithm->mutate(
                     substr($firstParent, 0, $crossoverPoint) . substr($secondParent, $crossoverPoint)

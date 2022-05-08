@@ -28,8 +28,10 @@ use Core\FitnessCalculatorChain;
 use Core\FitnessCalculatorInterface;
 
 $genesPerLesson = 4;
-$populationSize = 4;
-$totalSelection = 2;
+$populationSize = 100;
+$totalSelection = 10;
+$mutationRate = .1;
+$totalSlots = 5;
 $reader = new CsvReader(true);
 $groupRepository = new GroupRepository();
 $classroomRepository = new ClassroomRepository();
@@ -89,7 +91,7 @@ $kernel = new Kernel(
         new SimpleRandomNumberGenerator(),
         new SimpleIndividualMutationAlgorithm(
             new SimpleRandomNumberGenerator(),
-            .01
+            $mutationRate
         ),
         $populationSize
     ),
@@ -99,12 +101,12 @@ $kernel = new Kernel(
 );
 
 $customIndividuals = [
-    '00100000000000001010000001000000010101101001101110000000001100000111111111110001',
+//    '00100000000000001010000001000000010101101001101110000000001100000111111111110001',
 ];
 $initialPopulationGenerator = new SimplePopulationGenerator(
     new SimpleRandomNumberGenerator(),
     $lessonRepository,
-    10 * $classroomRepository->getCount(),
+    $totalSlots * $classroomRepository->getCount(),
     $genesPerLesson
 );
 

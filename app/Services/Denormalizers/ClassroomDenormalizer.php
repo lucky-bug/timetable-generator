@@ -28,7 +28,7 @@ class ClassroomDenormalizer
         }
 
         if (isset($data[self::KEY_IS_LABORATORY])) {
-            $classroom->setLaboratory($data[self::KEY_IS_LABORATORY]);
+            $classroom->setLaboratory($data[self::KEY_IS_LABORATORY] === '1');
         }
 
         return $classroom;

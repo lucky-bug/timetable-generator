@@ -23,7 +23,7 @@ class LessonDenormalizer
         }
 
         if (isset($data[self::KEY_TAUGHT_IN_LABORATORY])) {
-            $lesson->setTaughtInLaboratory($data[self::KEY_TAUGHT_IN_LABORATORY]);
+            $lesson->setTaughtInLaboratory($data[self::KEY_TAUGHT_IN_LABORATORY] === '1');
         }
 
         return $lesson;

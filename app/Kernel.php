@@ -41,20 +41,13 @@ class Kernel
         $this->writer->write(
             json_encode(
                 $population->getAll(),
-//                JSON_PRETTY_PRINT
+                JSON_PRETTY_PRINT
             )
         );
 
         while (!$this->convergenceChecker->check($population)) {
             $population = $this->iterate($population);
             $this->iterationCount++;
-
-            $this->writer->write(
-                json_encode(
-                    $population->getAll(),
-//                JSON_PRETTY_PRINT
-                )
-            );
         }
 
         $fittest = $population->get(0);
