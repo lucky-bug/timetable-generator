@@ -2,8 +2,9 @@
 
 namespace Tests\Services\Generators;
 
+use App\Repositories\LessonRepository;
 use App\Services\Generators\SimplePopulationGenerator;
-use Core\Population;
+use App\Services\Generators\SimpleRandomNumberGenerator;
 use PHPUnit\Framework\TestCase;
 
 class SimplePopulationGeneratorTest extends TestCase
@@ -14,7 +15,11 @@ class SimplePopulationGeneratorTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->populationGenerator = new SimplePopulationGenerator();
+        $this->populationGenerator = new SimplePopulationGenerator(
+            new SimpleRandomNumberGenerator(),
+            new LessonRepository(),
+            4
+        );
     }
 
     public function testGenerate()

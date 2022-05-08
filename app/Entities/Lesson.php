@@ -9,11 +9,6 @@ class Lesson
     private int $groupId;
     private bool $taughtInLaboratory;
 
-    public function __construct()
-    {
-        $this->id = 0;
-    }
-
     public function getId(): int
     {
         return $this->id;

@@ -18,9 +18,9 @@ class LessonRepository
         $this->lastId = 0;
     }
 
-    public function get(int $id): Lesson
+    public function get(int $id): ?Lesson
     {
-        return $this->lessons[$id];
+        return $this->lessons[$id - 1] ?? null;
     }
 
     public function getCount(): int
@@ -30,8 +30,7 @@ class LessonRepository
 
     public function store(Lesson $lesson): void
     {
-        $this->lastId++;
+        $this->lessons[$this->lastId++] = $lesson;
         $lesson->setId($this->lastId);
-        $this->lessons[$this->lastId] = $lesson;
     }
 }

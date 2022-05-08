@@ -18,9 +18,9 @@ class GroupRepository
         $this->lastId = 0;
     }
 
-    public function get(int $id): Group
+    public function get(int $id): ?Group
     {
-        return $this->groups[$id];
+        return $this->groups[$id - 1] ?? null;
     }
 
     public function getCount(): int
@@ -30,8 +30,7 @@ class GroupRepository
 
     public function store(Group $group): void
     {
-        $this->lastId++;
+        $this->groups[$this->lastId++] = $group;
         $group->setId($this->lastId);
-        $this->groups[$this->lastId] = $group;
     }
 }

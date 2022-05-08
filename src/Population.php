@@ -24,9 +24,9 @@ class Population
         return $this->individuals;
     }
 
-    public function getFirst(): string
+    public function get(int $index): string
     {
-        return $this->individuals[0];
+        return $this->individuals[$index];
     }
 
     /**

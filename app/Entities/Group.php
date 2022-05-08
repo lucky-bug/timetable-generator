@@ -8,11 +8,6 @@ class Group
     private string $name;
     private int $size;
 
-    public function __construct()
-    {
-        $this->id = 0;
-    }
-
     public function getId(): int
     {
         return $this->id;
