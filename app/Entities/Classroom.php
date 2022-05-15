@@ -8,7 +8,7 @@ class Classroom
     private string $building;
     private string $number;
     private int $capacity;
-    private bool $laboratory;
+    private string $type;
 
     public function getId(): int
     {
@@ -50,13 +50,18 @@ class Classroom
         $this->capacity = $capacity;
     }
 
-    public function isLaboratory(): bool
+    public function getType(): string
     {
-        return $this->laboratory;
+        return $this->type;
     }
 
-    public function setLaboratory(bool $laboratory): void
+    public function setType(string $type): void
     {
-        $this->laboratory = $laboratory;
+        $this->type = $type;
+    }
+
+    public function __toString()
+    {
+        return sprintf("Building: %s; Number: %s", $this->building, $this->number);
     }
 }

@@ -18,6 +18,14 @@ class ClassroomRepository
         $this->lastId = 0;
     }
 
+    /**
+     * @return Classroom[]
+     */
+    public function getAll(): array
+    {
+        return $this->classrooms;
+    }
+
     public function get(int $id): ?Classroom
     {
         return $this->classrooms[$id - 1] ?? null;

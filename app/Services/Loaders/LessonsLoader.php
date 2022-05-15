@@ -5,7 +5,7 @@ namespace App\Services\Loaders;
 use App\Entities\Lesson;
 use App\Repositories\LessonRepository;
 use App\Services\Denormalizers\LessonDenormalizer;
-use App\Services\Readers\ReaderInterface;
+use App\Services\IO\Readers\ReaderInterface;
 
 class LessonsLoader implements LoaderInterface
 {

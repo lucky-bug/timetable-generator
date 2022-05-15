@@ -6,8 +6,9 @@ class Lesson
 {
     private int $id;
     private string $name;
-    private int $groupId;
-    private bool $taughtInLaboratory;
+    private string $group;
+    private int $size;
+    private string $requiredClassroomType;
 
     public function getId(): int
     {
@@ -29,23 +30,46 @@ class Lesson
         $this->name = $name;
     }
 
-    public function getGroupId(): int
+    public function getGroup(): string
     {
-        return $this->groupId;
+        return $this->group;
     }
 
-    public function setGroupId(int $groupId): void
+    /**
+     * @return string[]
+     */
+    public function getGroups(): array
     {
-        $this->groupId = $groupId;
+        return explode(';', $this->group);
     }
 
-    public function isTaughtInLaboratory(): bool
+    public function setGroup(string $group): void
     {
-        return $this->taughtInLaboratory;
+        $this->group = $group;
     }
 
-    public function setTaughtInLaboratory(bool $taughtInLaboratory): void
+    public function getSize(): int
     {
-        $this->taughtInLaboratory = $taughtInLaboratory;
+        return $this->size;
+    }
+
+    public function setSize(int $size): void
+    {
+        $this->size = $size;
+    }
+
+    public function getRequiredClassroomType(): string
+    {
+        return $this->requiredClassroomType;
+    }
+
+    public function setRequiredClassroomType(string $requiredClassroomType): void
+    {
+        $this->requiredClassroomType = $requiredClassroomType;
+    }
+
+    public function __toString(): string
+    {
+        return sprintf("%s", $this->name);
     }
 }
