@@ -5,55 +5,35 @@ namespace Core;
 class Population
 {
     /**
-     * @var string[]
+     * @var Individual[]
      */
     private array $individuals;
-    private int $size;
 
     public function __construct()
     {
         $this->individuals = [];
-        $this->size = 0;
     }
 
     /**
-     * @return string[]
+     * @return Individual[]
      */
-    public function getAll(): array
+    public function getIndividuals(): array
     {
         return $this->individuals;
     }
 
-    public function get(int $index): string
+    public function getIndividual(int $index): ?Individual
     {
-        return $this->individuals[$index];
+        return $this->individuals[$index] ?? null;
     }
 
-    /**
-     * @param string[] $individuals
-     * @return $this
-     */
-    public function setAll(array $individuals): self
+    public function addIndividual(Individual $individual): void
     {
-        $this->individuals = $individuals;
-        $this->size = count($individuals);
-
-        return $this;
-    }
-
-    /**
-     * @return $this
-     */
-    public function add(string $individual): self
-    {
-        $this->individuals[] = $individual;
-        $this->size++;
-
-        return $this;
+        $this->individuals[] = clone $individual;
     }
 
     public function getSize(): int
     {
-        return $this->size;
+        return count($this->individuals);
     }
 }

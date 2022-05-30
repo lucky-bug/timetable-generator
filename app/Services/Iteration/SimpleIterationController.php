@@ -21,7 +21,7 @@ class SimpleIterationController implements IterationControllerInterface
 
     public function shouldContinue(Population $population): bool
     {
-        if ($this->fitnessCalculator->evaluate($population->get(0)) >= $this->expectedFitness) {
+        if ($population->getIndividual(0)->getFitness() >= $this->expectedFitness) {
             return false;
         }
 

@@ -16,13 +16,13 @@ use function DI\get;
 
 return [
     'populationSize' => 100,
-    'totalFittestToSelect' => 25,
-    'totalNonFitToSelect' => 25,
+    'totalFittestToSelect' => 15,
+    'totalNonFitToSelect' => 35,
     'slots' => fn (ContainerInterface $container) => $container->get('weeksPerTimetable') * $container->get('daysPerTimetable') * $container->get('periodsPerTimetable'),
-    'genesPerLesson' => 4,
-    'weeksPerTimetable' => 1,
-    'daysPerTimetable' => 5,
-    'periodsPerTimetable' => 1,
+    'genesPerLesson' => 11,
+    'weeksPerTimetable' => 2,
+    'daysPerTimetable' => 6,
+    'periodsPerTimetable' => 7,
     'mutationRate' => .1,
     'evaluators' => [
         get(CapacityEvaluator::class),

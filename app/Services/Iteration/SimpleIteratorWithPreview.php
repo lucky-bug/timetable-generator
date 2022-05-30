@@ -48,7 +48,8 @@ class SimpleIteratorWithPreview implements IteratorInterface
                 $this->selectionMethod->select($population)
             );
 
-            $this->writer->writeLine(sprintf("%d - %s (%d)", $this->iterationsCount, $population->get(0), $this->evaluator->evaluate($population->get(0))));
+            file_put_contents(sys_get_temp_dir() . '/fittest_genes.txt', $population->getIndividual(0)->getGenes());
+            $this->writer->writeLine(sprintf("%d - %d", $this->iterationsCount, $population->getIndividual(0)->getFitness()));
 
             $this->iterationsCount++;
         }

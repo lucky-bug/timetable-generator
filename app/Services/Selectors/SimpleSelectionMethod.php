@@ -3,6 +3,7 @@
 namespace App\Services\Selectors;
 
 use Core\EvaluatorInterface;
+use Core\Individual;
 use Core\Population;
 use Core\SelectionMethodInterface;
 
@@ -26,27 +27,23 @@ class SimpleSelectionMethod implements SelectionMethodInterface
     {
         $newPopulation = new Population();
 
-        $genesList = $population->getAll();
+        $individuals = $population->getIndividuals();
 
         usort(
-            $genesList,
-            function (string $firstGenes, string $secondGenes) {
-                return $this->evaluator->evaluate($firstGenes) < $this->evaluator->evaluate($secondGenes);
+            $individuals,
+            function (Individual $first, Individual $second) {
+                return $first->getFitness() < $second->getFitness();
             }
         );
 
-        $newPopulation->setAll(
-            array_slice(
-                $genesList,
-                0,
-                $this->totalFittestToSelect
-            )
-        );
+        foreach (range(0, $this->totalFittestToSelect - 1) as $i) {
+            $newPopulation->addIndividual($individuals[$i]);
+        }
 
-        shuffle($genesList);
+        shuffle($individuals);
 
         foreach (range(0, $this->totalNonFitToSelect - 1) as $i) {
-            $newPopulation->add($genesList[$i]);
+            $newPopulation->addIndividual($individuals[$i]);
         }
 
         return $newPopulation;
